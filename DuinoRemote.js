@@ -8,11 +8,10 @@ exports.action = function(data, next){
   }
 
   serialPort.write(data.cmd, function (err ,byteWritten){
-    if (err) error('DuinoRemote: '+err);
-    info("DuinoRemote: Commande = "+data.cmd+" (Envoi de "+byteWritten+" octets)");
+    if (err) error('Plugin DuinoRemote: '+err);
+    info("Plugin DuinoRemote: Command = "+data.cmd+" (Sending "+byteWritten+" bytes)");
   });
 
-  serialPort.on('error', function (erreur) {error('DuinoRemote Error: '+erreur)});
   next({ });
 }
 
@@ -20,6 +19,7 @@ exports.init = function(){
   var serial = require("serialport"),
       SerialPort = serial.SerialPort,
       portName = Config.modules.DuinoRemote.Port;
+  if (!portName) return error('Plugin DuinoRemote: Undefined COM Port...');
 
   serialPort = new SerialPort(portName, {
     baudrate: 9600,
@@ -27,5 +27,6 @@ exports.init = function(){
   });
 
   serialPort.on('data', function (data) {ledState = data});
+  serialPort.on('error', function (erreur) {error('Plugin DuinoRemote: '+erreur)});
   info('Plugin DuinoRemote is initializing ...');
 }

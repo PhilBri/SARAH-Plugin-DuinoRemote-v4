@@ -1,16 +1,19 @@
 
-@DuinoRemoteColor: #CC0000;
+@DuinoRemoteColor: #00979C;
 
 DIV#DuinoRemote {
-  background: #FFFFFF;
+  background: @DuinoRemoteColor;
   
   /*min-height: 200px;*/
   padding: 5px;
   
   border-radius: 6px;
   border: 4px solid #EEE;
-  
   A.DuinoRemote {
     color: @DuinoRemoteColor;
   }
 }
+#DuinoRemote {
+  .portlet-header {background-color: @DuinoRemoteColor ;}
+}
+  
