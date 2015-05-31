@@ -61,13 +61,19 @@
           <p>
             Il est à noter que la gestion via des shields "ethernet" est aussi possible.
           </p>
-          Vous devez donc, via le portlet du module :
-          <ul>
-            <li>Paramétrer le port COM : <code>{Port} : COMx</code></li>
-          </ul>
-          <strong>DuinoRemote</strong> vous avertira des erreurs éventuelles.
           <p>
-            Vous aurez peut-être besoin de relance SARAH aprés cette action...
+            Vous devez donc, via le portlet du module :
+          </p>
+          <p>
+            <ul>
+              <li>Paramétrer le port COM : <code>{Port} : COMx</code></li>
+            </ul>
+          </p>
+          <p>
+            <strong>DuinoRemote</strong> vous avertira des erreurs éventuelles.
+          </p>
+          <p>
+            <em>Vous aurez peut-être besoin de relance SARAH aprés cette action...</em>
           </p>
        </div>
       </div>
@@ -84,13 +90,13 @@
           <p>
             Cette bibliothéque est déjà compilée et ne demande aucun addon supplémentaire et est, de ce fait plus légére et moins contraignate que des solutions basées sur <strong>JohnnyFive</strong> ou <strong>Firmata</strong>
           </p>
-          <strong>Les avantages</strong>
+          <p><strong>Les avantages:</strong></p>
           <ul>
             <li>Temps de réaction.</li>
             <li>Légéreté.</li>
             <li>Liaison directe avec l'Arduino.</li>
           </ul>
-          <strong>Remarques</strong>
+          <p><strong>Remarques</strong></p>
           <p>
             L'utilisation de bibliothèques spécifiques est aussi possible, <code>serialport</code> se contentant d'envoyer des données brutes sur le port COM.
           </p>
@@ -123,7 +129,7 @@
             Pour pouvoir fonctionner, l'Arduino à besoin du programme adapté. Ce programme est disponible dans le répertoire du plugin sous le nom <code>DuinoRemote.ino</code>.
           </p>
           <p>
-            Contenu du fichier <code>ArduiRemote.ino</code>
+            Contenu du fichier <code>DuinoRemote.ino</code>
           </p>
           <pre>
             // Used with DuinoRemote plugin
@@ -161,8 +167,9 @@
       <div class="panel panel-info">
         <div class="panel-heading"><strong>Grammaire</strong></div>
         <div class="panel-body">
-          <p><strong>Modifications</strong></p>
+          <p>
             L'ensemble de la grammaire utilisée par le module est stockée dans le fichier <code>DuinoRemote.xml</code>
+          </p>
           <p>
             Ce fichier est aisément éditable par vos soins pour vous permettre de modifier, ajouter ou retirer une commande vocale.
           </p>
@@ -174,24 +181,24 @@
         <div class="panel-body">
           Pour cette version de démo., les commandes sont au nombre de 3.
           <ul>
-            <li>Commandes principales</li>
+            <p><li>Commandes principales</li></p>
             <ul>
               <li><pre><em>SARAH allume la LED</em></pre></li>
               <ul>
-                <li>Envoi "ON" sur le port COMx</li>
+                <li>Envoi <code>"ON"</code> sur le port COMx</li>
                 <li>Retour vocal: <code>La Led est allumée</code>
               </ul>
               <li><pre><em>SARAH éteinds la LED</em></pre></li>
               <ul>
-                <li>Envoi "OFF" sur le port COMx</li>
+                <li>Envoi <code>"OFF"</code> sur le port COMx</li>
                 <li>Retour vocal: <code>La Led est éteinte</code>
               </ul>
             </ul>
-            <li>Commande de retour d'état</li>
+            <p><li>Commande de retour d'état</li></p>
             <ul>
               <li><pre><em>SARAH quel est l'état de la LED</em></pre></li>
               <ul>
-                <li>Envoi "?" sur le port COMx</li>
+                <li>Envoi <code>"?"</code> sur le port COMx</li>
                 <li>Retour vocal: <code>La Led est {éteinte,allumée}</code>
               </ul>
             </ul>
