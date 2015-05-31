@@ -29,10 +29,3 @@ exports.init = function(){
   serialPort.on('data', function (data) {ledState = data});
   info('Plugin DuinoRemote is initializing ...');
 }
-
-exports.ajax = function(req, res, next){
-  // Called before rendering portlet when clicking on 
-  // <a href="/plugin/duinoremote" data-action="ajax">click me</a>  
-  // Because portlet CAN'T do asynchronous code
-  next();
-}
